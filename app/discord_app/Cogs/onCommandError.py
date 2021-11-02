@@ -36,7 +36,3 @@ class OnCommandErrorCog(commands.Cog, name="on command error"):
             await ctx.send(error)
         else:
             print(error)
-
-
-def setup(bot):
-    bot.add_cog(OnCommandErrorCog(bot))

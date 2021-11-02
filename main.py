@@ -1,1 +1,1 @@
-from app import discord
+import app

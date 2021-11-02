@@ -1,10 +1,13 @@
+from .Cogs.onCommandError import OnCommandErrorCog
+from .Cogs.help import HelpCog
+from .Cogs.ping import PingCog
+from .Cogs.settings import SettingsCog
 import discord
 from discord.ext import commands
 import json
-import os
 
 # Get configuration.json
-with open("./app/discord/configuration.json", "r") as config:
+with open("./app/discord_app/configuration.json", "r") as config:
     data = json.load(config)
     token = data["token"]
     prefix = data["prefix"]
@@ -17,10 +20,11 @@ intents = discord.Intents.default()
 bot = commands.Bot(prefix, intents=intents, owner_id=owner_id)
 
 # Load cogs
-if __name__ == '__main__':
-    for filename in os.listdir("./app/discord/Cogs"):
-        if filename.endswith(".py"):
-            bot.load_extension(f"Cogs.{filename[:-3]}")
+bot.remove_command("help")
+bot.add_cog(HelpCog(bot))
+bot.add_cog(OnCommandErrorCog(bot))
+bot.add_cog(PingCog(bot))
+bot.add_cog(SettingsCog(bot))
 
 
 @bot.event
