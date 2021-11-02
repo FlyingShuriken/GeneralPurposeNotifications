@@ -1,8 +1,6 @@
-import discord
+# import discord
 from discord.ext import commands
 import json
-
-from discord.ext.commands.errors import MissingRequiredArgument
 
 
 class SettingsCog(commands.Cog, name="config command"):

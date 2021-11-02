@@ -1,7 +1,6 @@
-import discord
+# import discord
 from discord.ext import commands
 from discord.ext.commands import MissingPermissions, CheckFailure, CommandNotFound, NotOwner
-import time
 
 from discord.ext.commands.errors import MissingRequiredArgument
 
