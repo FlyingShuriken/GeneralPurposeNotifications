@@ -1,0 +1,8 @@
+{
+	"token": "123",
+	"prefix": {
+		"456":"!"
+	},
+	"owner_id": 123456,
+	"server_owner" : {}
+}
